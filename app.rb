@@ -13,6 +13,7 @@ get "/" do
     forecast = HTTParty.get(url).parsed_response.to_hash
 
     @today_temp = "#{forecast["current"]["temp"]}"
+    @today_feels = "#{forecast["current"]["feels_like"]}"
     @today_weather = "#{forecast["current"]["weather"][0]["description"]}"
 
     @daily_temp = []
@@ -22,9 +23,15 @@ get "/" do
     
     @daily_weather =[]
         for day in forecast["daily"]
-            @daily_weather << "#{forecast["current"]["weather"][0]["description"]}"
+            @daily_weather << "#{day["weather"][0]["description"]}"
         end
 
+    @daily_min = []
+        for day in forecast["daily"]
+            @daily_min << "#{day["temp"]["max"]}"
+        end
+
+    @weather_number = 0
 
     url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-17&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
     news = HTTParty.get(url2).parsed_response.to_hash
@@ -43,6 +50,8 @@ get "/" do
         for article in news["articles"]
             @newslink << "#{article["url"]}"
         end
+    
+    @news_number = 0
 
     view "news"
 end

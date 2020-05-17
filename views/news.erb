@@ -23,14 +23,89 @@
   <body>
 
     <div class="container mt-5">
-      <h1>Weather</h1>
+      <h1>Weather & News</h1>
     </div>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-lg d-flex justify-content-center align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>Today</h1>
+                    <h5>Temp: <%=@today_temp%> degrees</h5>
+                    <p>Today there will be <%=@today_weather%></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg d-flex justify-content-center align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>Day <%=@weather_number + 2%></h1>
+                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                    <% @weather_number = @weather_number + 1 %>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg d-flex justify-content-center align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>Day <%=@weather_number + 2%></h1>
+                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                    <% @weather_number = @weather_number + 1 %>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg d-flex justify-content-center align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>Day <%=@weather_number + 2%></h1>
+                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                    <% @weather_number = @weather_number + 1 %>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg d-flex justify-content-center align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1>Day <%=@weather_number + 2%></h1>
+                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                    <% @weather_number = @weather_number + 1 %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <h2>
-    <% for day in @daily_temp %>
-    <%= day %>
-    <%end%>
-    </h2>
+<!--End Weather-->
+
+<div class = "row">
+    <div class="col-lg">
+        <div class="container">
+            <div class="jumbotron news_jumbo">
+                <h2><%=@headline[@news_number]%></h2>
+                <h4><%=@tagline[@news_number]%></h4>
+                <a class="btn btn-primary" href="<%=@newslink[@news_number]%>" role="button">Link</a>
+                <% @news_number = @news_number + 1 %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class="col-lg">
+        <div class="container">
+            <div class="jumbotron news_jumbo">
+                <h2><%=@headline[@news_number]%></h2>
+                <h4><%=@tagline[@news_number]%></h4>
+                <a class="btn btn-primary" href="<%=@newslink[@news_number]%>" role="button">Link</a>
+                <% @news_number = @news_number + 1 %>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

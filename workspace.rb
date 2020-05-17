@@ -16,3 +16,7 @@ for day in forecast["daily"]
    puts "On day #{day_number}, A high of #{day["temp"]["max"]} and #{day["weather"][0]["description"]}"
    day_number = day_number + 1
 end
+
+for day in forecast["daily"]
+    puts "#{day["weather"][0]["description"]}"
+end
