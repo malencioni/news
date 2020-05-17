@@ -53,5 +53,10 @@ get "/" do
     
     @news_number = 0
 
+    @imagelink = []
+        for article in news["articles"]
+            @imagelink << "#{article["urlToImage"]}"
+        end
+    
     view "news"
 end

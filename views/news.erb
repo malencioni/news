@@ -8,72 +8,87 @@
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400&family=Playfair+Display&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
     <title>News</title>
   </head>
-  <body>
+  <body style="background-color: #f9ead4">
 
     <div class="container container_width">
-      <h1>Weather & News</h1>
+      <h1 class="page_heading">Weather & News</h1>
     </div>
+
+
 <div class="container container_width">
     <div class="jumbotron weather_jumbo">
     <div class="row">
         <div class="col-lg d-flex justify-content-center align-items-stretch">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h1>Today</h1>
-                    <h5>Temp: <%=@today_temp%> degrees</h5>
-                    <p>Today there will be <%=@today_weather%></p>
+                    <div class="container">
+                        <h1 class="days">Today</h1>
+                        <h5>Temp: <%=@today_temp%> degrees</h5>
+                        <p>Today there will be <%=@today_weather%></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg d-flex justify-content-center align-items-stretch">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h1>Day <%=@weather_number + 2%></h1>
-                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
-                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
-                    <% @weather_number = @weather_number + 1 %>
+                    <div class="container">
+                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                        <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                        <% @weather_number = @weather_number + 1 %>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg d-flex justify-content-center align-items-stretch">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h1>Day <%=@weather_number + 2%></h1>
-                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
-                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
-                    <% @weather_number = @weather_number + 1 %>
+                    <div class="container">
+                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                        <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                        <% @weather_number = @weather_number + 1 %>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg d-flex justify-content-center align-items-stretch">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h1>Day <%=@weather_number + 2%></h1>
-                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
-                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
-                    <% @weather_number = @weather_number + 1 %>
+                    <div class="container">
+                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                        <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                        <% @weather_number = @weather_number + 1 %>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg d-flex justify-content-center align-items-stretch">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h1>Day <%=@weather_number + 2%></h1>
-                    <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
-                    <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
-                    <% @weather_number = @weather_number + 1 %>
+                    <div class="container">
+                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
+                        <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
+                        <% @weather_number = @weather_number + 1 %>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,11 +97,15 @@
 </div>
 <!--End Weather-->
 
-<div class = "row">
-    <div class="col-lg">
-        <div class="container container_width">
-            <div class="jumbotron news_jumbo">
-                <h2><%=@headline[@news_number]%></h2>
+<!--Top Story-->
+<div class="container container_width">
+    <div class="jumbotron news_jumbo">
+        <div class = "row">
+            <div class="col-lg-4"> 
+                <a href="<%=@newslink[@news_number]%>" target="_blank"><img src="<%=@imagelink[@news_number]%>" class="img-fluid content" style="float:left" alt="Responsive image"></img></a>
+            </div>
+            <div class="col-lg" style="padding-left: 20"> 
+                <h2 class="heading"><%=@headline[@news_number]%></h2>
                 <h4><%=@tagline[@news_number]%></h4>
                 <a class="btn btn-primary news_link" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
                 <% @news_number = @news_number + 1 %>
@@ -94,12 +113,97 @@
         </div>
     </div>
 </div>
+
+<!--Cards-->
+<div class="container container_width">
+    <div class="jumbotron news_jumbo">
+        <div class = "row">
+            <div class="col-lg d-flex justify-content-center align-items-stretch">
+                <div class="card heading" style="width: 20rem;">
+                    <a href="<%=@newslink[@news_number]%>" target="_blank"><img class="card-img-top" src="<%=@imagelink[@news_number]%>" alt="Card image cap"></a>
+                    <div class="container">
+                        <h3 class="card-title"><%=@headline[@news_number]%></h3>
+                        <p class="card-text"><%=@tagline[@news_number]%></p>
+                    </div>
+                    <a class="btn btn-primary news_link mt-auto" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                    <% @news_number = @news_number + 1 %>
+                </div>
+            </div>
+
+            <div class="col-lg d-flex justify-content-center align-items-stretch">
+                <div class="card heading" style="width: 20rem;">
+                    <a href="<%=@newslink[@news_number]%>" target="_blank"><img class="card-img-top" src="<%=@imagelink[@news_number]%>" alt="Card image cap"></a>
+                    <div class="container">
+                        <h3 class="card-title"><%=@headline[@news_number]%></h3>
+                        <p class="card-text"><%=@tagline[@news_number]%></p>
+                       </div>
+                    <a class="btn btn-primary news_link mt-auto" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                    <% @news_number = @news_number + 1 %>
+                </div>
+            </div>
+
+            <div class="col-lg d-flex justify-content-center align-items-stretch">
+                <div class="card heading" style="width: 20rem;">
+                    <a href="<%=@newslink[@news_number]%>" target="_blank"><img class="card-img-top" src="<%=@imagelink[@news_number]%>" alt="Card image cap"></a>
+                    <div class="container">
+                        <h3 class="card-title"><%=@headline[@news_number]%></h3>
+                        <p class="card-text"><%=@tagline[@news_number]%></p>
+                    </div>
+                    <a class="btn btn-primary news_link mt-auto" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                    <% @news_number = @news_number + 1 %>
+                </div>
+            </div>
+
+            <div class="col-lg d-flex justify-content-center align-items-stretch">
+                <div class="card heading" style="width: 20rem;">
+                    <a href="<%=@newslink[@news_number]%>" target="_blank"><img class="card-img-top" src="<%=@imagelink[@news_number]%>" alt="Card image cap"></a>
+                    <div class="container">
+                        <h3 class="card-title"><%=@headline[@news_number]%></h3>
+                        <p class="card-text"><%=@tagline[@news_number]%></p>
+                    </div>
+                    <a class="btn btn-primary news_link mt-auto" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                    <% @news_number = @news_number + 1 %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Older News-->
+
 <div class = "row">
-    <div class="col-lg">
-        <div class="container container_width">
-            <div class="jumbotron news_jumbo">
-                <h2><%=@headline[@news_number]%></h2>
-                <h4><%=@tagline[@news_number]%></h4>
+    <div class="container container_width">
+        <div class="jumbotron news_jumbo bottom_news">
+            <div class="col-lg" style="padding-left: 20"> 
+                <h2 class="heading_sm"><%=@headline[@news_number]%></h2>
+                <p class="tagline_sm"><%=@tagline[@news_number]%></p>
+                <a class="btn btn-primary news_link" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                <% @news_number = @news_number + 1 %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "row">
+    <div class="container container_width">
+        <div class="jumbotron news_jumbo bottom_news">
+            <div class="col-lg" style="padding-left: 20"> 
+                <h2 class="heading_sm"><%=@headline[@news_number]%></h2>
+                <p class="tagline_sm"><%=@tagline[@news_number]%></p>
+                <a class="btn btn-primary news_link" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
+                <% @news_number = @news_number + 1 %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "row">
+    <div class="container container_width">
+        <div class="jumbotron news_jumbo bottom_news">
+            <div class="col-lg" style="padding-left: 20"> 
+                <h2 class="heading_sm"><%=@headline[@news_number]%></h2>
+                <p class="tagline_sm"><%=@tagline[@news_number]%></p>
                 <a class="btn btn-primary news_link" target="_blank" href="<%=@newslink[@news_number]%>" role="button">Read More</a>
                 <% @news_number = @news_number + 1 %>
             </div>
