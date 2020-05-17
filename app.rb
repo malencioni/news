@@ -4,19 +4,45 @@ require "httparty"
 def view(template); erb template.to_sym; end
 
 get "/" do
-    lat = 42.0574063
-    long = -87.6722787
+    lat = 41.887562
+    long = -88.305092
     units = "imperial" # or metric, whatever you like
     key = "7e94c93c86a480064398484949fe26a4" # replace this with your real OpenWeather API key
     url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{lat}&lon=#{long}&units=#{units}&appid=#{key}"
-    #url = "https://api.openweathermap.org/data/2.5/onecall?lat=42.0574063&lon=-87.6722787&units=imperial&appid=7e94c93c86a480064398484949fe26a4"
+    #url = "https://api.openweathermap.org/data/2.5/onecall?lat=41.887562&lon=-88.305092&units=imperial&appid=7e94c93c86a480064398484949fe26a4"
     forecast = HTTParty.get(url).parsed_response.to_hash
 
-    puts "It is currently #{forecast["current"]["temp"]} degrees and #{forecast["current"]["weather"][0]["description"]}"
-    puts "Extended forecast:"
-day_number = 1
-for day in forecast["daily"]
-   puts "On day #{day_number}, A high of #{day["temp"]["max"]} and #{day["weather"][0]["description"]}"
-   day_number = day_number + 1
-end
+    @today_temp = "#{forecast["current"]["temp"]}"
+    @today_weather = "#{forecast["current"]["weather"][0]["description"]}"
+
+    @daily_temp = []
+        for day in forecast["daily"]
+            @daily_temp << "#{day["temp"]["max"]}"
+        end
+    
+    @daily_weather =[]
+        for day in forecast["daily"]
+            @daily_weather << "#{forecast["current"]["weather"][0]["description"]}"
+        end
+
+
+    url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-17&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
+    news = HTTParty.get(url2).parsed_response.to_hash
+    
+    @headline =[]
+        for article in news["articles"]
+            @headline << "#{article["title"]}"
+        end
+
+    @tagline = []
+        for article in news["articles"]
+            @tagline << "#{article["description"]}"
+        end
+
+    @newslink = []
+        for article in news["articles"]
+            @newslink << "#{article["url"]}"
+        end
+
+    view "news"
 end
