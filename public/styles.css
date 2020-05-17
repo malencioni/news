@@ -1,5 +1,16 @@
 .news_jumbo {
-    background-color: #f5ebd8;
+    background-color: #d8f4ff;
 
 }
 
+.weather_jumbo {
+    background-color: #415eff;
+}
+
+.news_link {
+    background-color: #415eff;
+}
+
+.container_width {
+    max-width: 1700px
+}
