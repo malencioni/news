@@ -33,7 +33,7 @@ get "/" do
 
     @weather_number = 0
 
-    url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-17&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
+    url2 = "http://newsapi.org/v2/top-headlines?country=us&category=business&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
     news = HTTParty.get(url2).parsed_response.to_hash
     
     @headline =[]
