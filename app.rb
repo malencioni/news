@@ -46,17 +46,6 @@ get "/" do
     @day = @date.each {|x| Time.at(x-18000).to_datetime.strftime("%A, %B-%d")}
   
         
-    pp @day
-
-    
-   
-
-    
-
-
-
-
-    
 
 
     url2 = "http://newsapi.org/v2/top-headlines?country=us&category=business&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
