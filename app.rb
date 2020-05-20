@@ -132,7 +132,60 @@ get "/" do
         @weather_background = "/images/clouds.jpg"
     end
 
+    @current_weather_check = "#{forecast["current"]["weather"][0]["main"]}"
+    
+        if @time_check < @sunrise_i
+            if @current_weather_check.split(",")[0].include? "Clouds" then
+                @today_weather_image = "http://openweathermap.org/img/wn/02n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Thunderstorm" then
+                @today_weather_image = "http://openweathermap.org/img/wn/11n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Drizzle" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Rain" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Snow" then
+                @today_weather_image = "http://openweathermap.org/img/wn/13n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Clear" then
+                @today_weather_image = "http://openweathermap.org/img/wn/01n@2x.png"
+            else
+                @today_weather_image = "http://openweathermap.org/img/wn/50n@2x.png"
+            end
 
+
+        elsif @time_check > @sunset_i
+            if @current_weather_check.split(",")[0].include? "Clouds" then
+                @today_weather_image = "http://openweathermap.org/img/wn/02n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Thunderstorm" then
+                @today_weather_image = "http://openweathermap.org/img/wn/11n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Drizzle" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Rain" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Snow" then
+                @today_weather_image = "http://openweathermap.org/img/wn/13n@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Clear" then
+                @today_weather_image = "http://openweathermap.org/img/wn/01n@2x.png"
+            else
+                @today_weather_image = "http://openweathermap.org/img/wn/50n@2x.png"
+            end
+
+        else
+            if @current_weather_check.split(",")[0].include? "Clouds" then
+                @today_weather_image = "http://openweathermap.org/img/wn/02d@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Thunderstorm" then
+                @today_weather_image = "http://openweathermap.org/img/wn/11d@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Drizzle" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10d@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Rain" then
+                @today_weather_image = "http://openweathermap.org/img/wn/10d@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Snow" then
+                @today_weather_image = "http://openweathermap.org/img/wn/13d@2x.png"
+            elsif @current_weather_check.split(",")[0].include? "Clear" then
+                @today_weather_image = "http://openweathermap.org/img/wn/01d@2x.png"
+            else
+                @today_weather_image = "http://openweathermap.org/img/wn/50d@2x.png"
+            end
+        end
     
         
 
