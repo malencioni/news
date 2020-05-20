@@ -3,7 +3,7 @@
 }
 
 .weather_jumbo {
-    background-image: url(/images/weather_background.jpg);
+    /*background-image: url(<%=@weather_background%>);*/
     background-size: cover;
     /*background-color: #415eff;*/
 }

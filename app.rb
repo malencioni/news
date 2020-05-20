@@ -111,7 +111,28 @@ get "/" do
                 end
             end
     end
-  
+
+    @current_check = "#{forecast["current"]["weather"][0]["main"]}"
+
+
+    if @current_check.include? "Clouds" then
+        @weather_background = "/images/clouds.jpg"
+    elsif @current_check.include? "Thunderstorm" then
+        @weather_background = "/images/thunderstorm.jpg"
+    elsif @current_check.include? "Drizzle" then
+        @weather_background = "/images/drizzle.jpg"
+    elsif @current_check.include? "Rain" then
+        @weather_background = "/images/rain.jpg"
+    elsif @current_check.include? "Snow" then
+        @weather_background = "/images/snow.jpg"
+    elsif @current_check.include? "Clear" then
+        @weather_background = "/images/clear.jpg"
+    else
+        @weather_background = "/images/clouds.jpg"
+    end
+
+
+    
         
 
 
