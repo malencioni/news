@@ -37,7 +37,7 @@
             <div class="card" style="width: 15rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h1 class="days">Today</h1>
+                        <h1 class="days_today">Today</h1>
                         <h5>Temp: <%=@today_temp%> degrees</h5>
                         <p>Today there will be <%=@today_weather%></p>
                     </div>
@@ -48,7 +48,7 @@
             <div class="card" style="width: 15rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h1 class="days"><%=@day[@weather_number + 1]%></h1>
                         <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
                         <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
                         <% @weather_number = @weather_number + 1 %>
@@ -60,7 +60,7 @@
             <div class="card" style="width: 15rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h1 class="days"><%=@day[@weather_number + 1]%></h1>
                         <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
                         <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
                         <% @weather_number = @weather_number + 1 %>
@@ -72,7 +72,7 @@
             <div class="card" style="width: 15rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h1 class="days"><%=@day[@weather_number + 1]%></h1>
                         <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
                         <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
                         <% @weather_number = @weather_number + 1 %>
@@ -84,7 +84,7 @@
             <div class="card" style="width: 15rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h1 class="days">Day <%=@weather_number + 2%></h1>
+                        <h1 class="days"><%=@day[@weather_number + 1]%></h1>
                         <h5>High: <%=@daily_temp[@weather_number]%> Low: <%=@daily_min[0]%></h5>
                         <p>Tomorrow there will be <%=@daily_weather[@weather_number]%></p>
                         <% @weather_number = @weather_number + 1 %>

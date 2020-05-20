@@ -22,3 +22,44 @@ for day in forecast["daily"]
 end
 
 
+
+        @newnumber = 1
+        @imagelinkuse = @imagelink[@newnumber] 
+
+        @newnumber + 1
+
+        unless @imagelink.nil?
+            @imagelinkuse = "/images/backup_S.png"
+        end
+
+
+
+         @imagelink = []
+        for article in news["articles"]
+            if "#{article["urlToImage"]}" then
+                @imagelink << "/images/backup_S.png"
+            else
+                @imagelink << "#{article["urlToImage"]}"
+            end
+        end
+
+
+
+    @date = []
+        for day in @time
+            @date << Time.at(day).to_datetime
+        end
+
+
+    @day = []
+        for day in @date
+            @day = @date.strftime('%A, %B-%d')
+        end
+        
+    @time = 1589945927
+
+    @date = Time.at(@time-18000).to_datetime
+
+    @day = @date.strftime('%A, %B-%d')
+
+    

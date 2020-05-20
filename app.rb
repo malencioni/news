@@ -1,6 +1,8 @@
 require "sinatra"
 require "sinatra/reloader"
 require "httparty"
+require "date"
+require "time"
 def view(template); erb template.to_sym; end
 
 get "/" do
@@ -32,6 +34,30 @@ get "/" do
         end
 
     @weather_number = 0
+    
+    @time = []
+        for day in forecast["daily"]
+            @time << "#{day["dt"]}"
+        end
+    
+    @timenew = @time.map { |n| n}
+    @timenewer = @timenew.each.map(&:to_i)
+    @date = @timenewer.map
+    @day = @date.each {|x| Time.at(x-18000).to_datetime.strftime("%A, %B-%d")}
+  
+        
+    pp @day
+
+    
+   
+
+    
+
+
+
+
+    
+
 
     url2 = "http://newsapi.org/v2/top-headlines?country=us&category=business&sortBy=publishedAt&apiKey=9f7deae579a84f1f98b61ad1c7213c39"
     news = HTTParty.get(url2).parsed_response.to_hash
@@ -61,8 +87,11 @@ get "/" do
                     @imagelink << "#{article["urlToImage"]}"
                 end
         end
-   
+
+
+
+
+    
 
     view "news"
 end
-

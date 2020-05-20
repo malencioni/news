@@ -10,6 +10,7 @@
 
 .news_link {
     background-color: #415eff;
+    border-color: #415eff;
 }
 
 .container_width {
@@ -52,8 +53,13 @@
     font-size: 20px;
 }
 
+.days_today {
+    font-family: 'Noto Serif', serif;
+}
+
 .days {
     font-family: 'Noto Serif', serif;
+    font-size: 30px;
 }
 
 .card {
