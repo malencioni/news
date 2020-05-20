@@ -20,3 +20,5 @@ end
 for day in forecast["daily"]
     puts "#{day["weather"][0]["description"]}"
 end
+
+

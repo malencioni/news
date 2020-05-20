@@ -53,10 +53,16 @@ get "/" do
     
     @news_number = 0
 
-    @imagelink = []
+     @imagelink = []
         for article in news["articles"]
-            @imagelink << "#{article["urlToImage"]}"
+                if article["urlToImage"].nil? then 
+                    @imagelink << "/images/backup_S.png"
+                else
+                    @imagelink << "#{article["urlToImage"]}"
+                end
         end
-    
+   
+
     view "news"
 end
+
