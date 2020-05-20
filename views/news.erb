@@ -39,6 +39,7 @@
                     <div class="container">
                         <h1 class="days_today">Today</h1>
                         <h5>Temp: <%=@today_temp%></h5>
+                        </br>
                         <img class="card-img-top" src="<%=@daily_weather_image[@weather_number]%>" alt="broken">
                         <p>Today there will be <%=@today_weather.split(",")[0]%></p>
                         <% @weather_number = @weather_number + 1 %>
