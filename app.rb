@@ -57,17 +57,17 @@ get "/" do
     @daily_weather_image = []
         if @time_check < @sunrise_i then
             for day in forecast["daily"]
-                if day["weather"][0]["main"].include? "Clouds" then
+                if day["weather"][0]["main"].split(",")[0].include? "Clouds" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/02n@2x.png"
-                elsif day["weather"][0]["main"].include? "Thunderstorm" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Thunderstorm" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/11n@2x.png"
-                elsif day["weather"][0]["main"].include? "Drizzle" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Drizzle" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10n@2x.png"
-                elsif day["weather"][0]["main"].include? "Rain" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Rain" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10n@2x.png"
-                elsif day["weather"][0]["main"].include? "Snow" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Snow" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/13n@2x.png"
-                elsif day["weather"][0]["main"].include? "Clear" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Clear" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/01n@2x.png"
                 else
                     @daily_weather_image << "http://openweathermap.org/img/wn/50n@2x.png"
@@ -75,17 +75,17 @@ get "/" do
             end
         elsif @time_check > @sunset_i
             for day in forecast["daily"]
-                if day["weather"][0]["main"].include? "Clouds" then
+                if day["weather"][0]["main"].split(",")[0].include? "Clouds" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/02n@2x.png"
-                elsif day["weather"][0]["main"].include? "Thunderstorm" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Thunderstorm" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/11n@2x.png"
-                elsif day["weather"][0]["main"].include? "Drizzle" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Drizzle" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10n@2x.png"
-                elsif day["weather"][0]["main"].include? "Rain" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Rain" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10n@2x.png"
-                elsif day["weather"][0]["main"].include? "Snow" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Snow" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/13n@2x.png"
-                elsif day["weather"][0]["main"].include? "Clear" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Clear" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/01n@2x.png"
                 else
                     @daily_weather_image << "http://openweathermap.org/img/wn/50n@2x.png"
@@ -94,17 +94,17 @@ get "/" do
 
         else
             for day in forecast["daily"]
-                if day["weather"][0]["main"].include? "Clouds" then
+                if day["weather"][0]["main"].split(",")[0].include? "Clouds" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/02d@2x.png"
-                elsif day["weather"][0]["main"].include? "Thunderstorm" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Thunderstorm" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/11d@2x.png"
-                elsif day["weather"][0]["main"].include? "Drizzle" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Drizzle" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10d@2x.png"
-                elsif day["weather"][0]["main"].include? "Rain" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Rain" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/10d@2x.png"
-                elsif day["weather"][0]["main"].include? "Snow" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Snow" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/13d@2x.png"
-                elsif day["weather"][0]["main"].include? "Clear" then
+                elsif day["weather"][0]["main"].split(",")[0].include? "Clear" then
                     @daily_weather_image << "http://openweathermap.org/img/wn/01d@2x.png"
                 else
                     @daily_weather_image << "http://openweathermap.org/img/wn/50d@2x.png"
@@ -112,8 +112,9 @@ get "/" do
             end
     end
 
-    @current_check = "#{forecast["current"]["weather"][0]["main"]}"
-
+    @current_send = "#{forecast["current"]["weather"][0]["main"]}"
+    #current_send = "Clouds, Thunderstorm"
+    @current_check = @current_send.split(",")[0];
 
     if @current_check.include? "Clouds" then
         @weather_background = "/images/clouds.jpg"
