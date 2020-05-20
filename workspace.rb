@@ -62,4 +62,33 @@ end
 
     @day = @date.strftime('%A, %B-%d')
 
-    
+    my_string = "abcdefg"
+if my_string.include? "cde"
+   puts "String includes 'cde'"
+end
+
+
+
+        elsif @time_check > @sunset
+
+
+            if @time_check < @sunrise
+            for day in forecast["daily"]
+            if day["weather"][0]["main"].include? "Clouds" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/02d@2x.png"
+            elsif day["weather"][0]["main"].include? "Thunderstorm" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/11d@2x.png"
+            elsif day["weather"][0]["main"].include? "Drizzle" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/10d@2x.png"
+            elsif day["weather"][0]["main"].include? "Rain" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/10d@2x.png"
+            elsif day["weather"][0]["main"].include? "Snow" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/13d@2x.png"
+            elsif day["weather"][0]["main"].include? "Clear" then
+                @daily_weather_image << "http://openweathermap.org/img/wn/01d@2x.png"
+            else
+                @daily_weather_image << "http://openweathermap.org/img/wn/50d@2x.png"
+            end
+        end
+
+        else
